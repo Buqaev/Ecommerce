@@ -1,0 +1,45 @@
+﻿@model List<AlisVeris.Models.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+
+<h2>Haqimizda</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Veziffe</th>
+                <th>Basliq</th>
+                <th>Metn</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Veziffe</td>
+                    <td>@x.Basliq</td>
+                    <td>@x.Metn</td>
+                    
+
+                    
+
+
+                    <td><a class="btn btn-primary" href="@Url.Action("UpdateAbout","About", new {Id=x.Id })">Yenile</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

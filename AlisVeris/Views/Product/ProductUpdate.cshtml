@@ -1,0 +1,119 @@
+﻿@model AlisVeris.Models.Product
+@{
+    ViewBag.Title = "ProductUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">About Yenile</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Update","Product", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" value="@Model.Ad" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Acixlama</label>
+                    <input type="text" value="@Model.Acixlama" name="Acixlama" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Description</label>
+                    <input type="text" value="@Model.Description" name="Description" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Material</label>
+                    <input type="text" value="@Model.Material" name="Material" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">EnerjiTipi</label>
+                    <input type="text" value="@Model.EnerjiTipi" name="EnerjiTipi" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Voltaj</label>
+                    <input type="text" value="@Model.Voltaj" name="Voltaj" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ceki</label>
+                    <input type="text" value="@Model.Ceki" name="Ceki" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Eni</label>
+                    <input type="text" value="@Model.Eni" name="Eni" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Uzunluq</label>
+                    <input type="text" value="@Model.Uzunluq" name="Uzunluq" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">AlisQiymeti</label>
+                    <input type="text" value="@Model.AlisQiymeti" name="AlisQiymeti" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">SatisQiymeti</label>
+                    <input type="text" value="@Model.SatisQiymeti" name="SatisQiymeti" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">StokSayi</label>
+                    <input type="text" value="@Model.StokSayi" name="StokSayi" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Rengi</label>
+                    <input type="text" value="@Model.Reng" name="Reng" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kateqoriya</label>
+                    <select name="ProductCategoryaId" class="form-control">
+                        @*CategoryId*@
+                        <option>--Secin</option>
+                        @foreach (var x in ViewBag.cate)
+                        {
+                            @*<option @if (cat.Id == Model.CategoryId) { "selected"} else { ""} value="@cat.Id">@cat.Name</option>*@
+                            <option @(x.Id == Model.ProductCategoryaId ? "selected" : " ") value="@x.Id">@x.Ad</option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Masin</label>
+                    <select name="CarId" class="form-control">
+                        @*CategoryId*@
+                        <option>--Secin</option>
+                        @foreach (var x in ViewBag.car)
+                        {
+                            @*<option @if (cat.Id == Model.CategoryId) { "selected"} else { ""} value="@cat.Id">@cat.Name</option>*@
+                            <option @(x.Id == Model.CarId ? "selected" : " ") value="@x.Id">@x.Marka</option>
+                        }
+
+                    </select>
+                </div>
+
+                <img src="~/Images/@Model.Sekil" height="150" />
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sekil</label>
+                    <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yenile</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

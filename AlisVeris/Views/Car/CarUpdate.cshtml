@@ -1,0 +1,52 @@
+﻿@model AlisVeris.Models.Car
+@{
+    ViewBag.Title = "CarUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">About Yenile</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Update","Car", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Marka</label>
+                    <input type="text" value="@Model.Marka" name="Marka" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Model</label>
+                    <input type="text" value="@Model.Model" name="Model" class="form-control" id="exampleInputEmail1" >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">MotorNovu</label>
+                    <input type="text" value="@Model.MotorNovu" name="MotorNovu" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Buraxilis ili</label>
+                    <input type="text" value="@Model.il" name="il" class="form-control" id="exampleInputEmail1" >
+                </div>
+                
+
+
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yenile</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

@@ -1,0 +1,27 @@
+﻿@model AlisVeris.Models.User
+@{
+    ViewBag.Title = "SekilGetr";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<form method="post" action="@Url.Action("UpdateSekil","Dashboard", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+    <div class="card-body">
+        
+
+
+        <img src="~/Images/@Model.Sekil" height="150" />
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Sekil</label>
+            <input type="file" name="Logo" class="form-control" id="exampleInputEmail1">
+        </div>
+
+
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Yenile</button>
+    </div>
+</form>
+

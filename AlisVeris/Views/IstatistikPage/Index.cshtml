@@ -1,0 +1,201 @@
+﻿@model List<AlisVeris.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+
+    double cem = 0;
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/compare.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:33 GMT -->
+
+<body>
+    
+    <div class="site">
+ 
+    <div class="site__body">
+        <div class="block-header block-header--has-breadcrumb block-header--has-title">
+        <div class="container">
+            <div class="block-header__body">
+            <nav class="breadcrumb block-header__breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb__list">
+                <li class="breadcrumb__spaceship-safe-area" role="presentation"></li>
+                <li class="breadcrumb__item breadcrumb__item--parent breadcrumb__item--first">
+                    <a href="index.html" class="breadcrumb__item-link">Home</a>
+                    </li>
+                <li class="breadcrumb__item breadcrumb__item--parent">
+                    <a href="#" class="breadcrumb__item-link">Breadcrumb</a>
+                    </li>
+                <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
+                    <span class="breadcrumb__item-link">Current Page</span>
+                    </li>
+                <li class="breadcrumb__title-safe-area" role="presentation"></li>
+                    </ol>
+                </nav>
+            <h1 class="block-header__title">Müqayisə</h1>
+                </div>
+            </div>
+            </div>
+        <div class="block">
+        <div class="container">
+            <div class="compare card">
+            
+            <div class="table-responsive">
+                <table class="compare__table compare-table">
+                <tbody>
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Mehsul</th>
+                        @foreach (var x in Model)
+                        {
+
+                        
+                            <td class="compare-table__column compare-table__column--product">
+                                <a href="product-full.html" class="compare-table__product">
+                                    <div class="compare-table__product-image image image--type--product">
+                                        <div class="image__body">
+                                            <img class="image__tag" src="~/Images/@x.Sekil" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="compare-table__product-name">@x.Ad</div>
+                                </a>
+                            </td>
+                        }
+
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Rating</th>
+                        @foreach (var x in Model)
+                        {
+                            <td  class="compare-table__column compare-table__column--product">
+                                <div style="padding-left:42px; " class="product-card__rating ">
+                                    <div class="rating product-card__rating-stars d-flex">
+                                        @{double a = x.ProductReviews.Select(y => y.Ulduzsayi).Sum();}
+                                        @{double b = x.ProductReviews.Count();}
+                                        @{ if (a > 0 && b > 0)
+                                            {
+                                                { cem = a / b; }
+                                            }
+                                            else if (a == 0 && b == 0)
+                                            {
+                                                cem = 0;
+                                            }
+                                        }
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            if (cem >= i)
+                                            {
+                                                <div class="rating__star rating__star--active"></div>
+                                            }
+                                            else
+                                            {
+
+                                                <div class="rating__star"></div>
+                                            }
+                                        }
+                                    </div>
+                                    <div class="product-card__rating-label">
+
+
+
+                                        @b Rey
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </td>
+                        }
+
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+                    
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Qiymet</th>
+                        @foreach (var x in Model)
+                        {
+                            <td class="compare-table__column compare-table__column--product">$@x.SatisQiymeti</td>
+
+                        }
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Sebete ElaveEt</th>
+                  @foreach (var x in Model)
+                  {
+
+
+                    <td class="compare-table__column compare-table__column--product">
+                        <a href="@Url.Action("ProductDetail","ProductPage",new {Id=x.Id })" class="btn btn-sm btn-primary">Elave Et</a>
+                        </td>
+                  }
+                    <td class="compare-table__column compare-table__column--fake"></td>
+                        </tr>
+
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Mehsul Kodu</th>
+                        @foreach (var x in Model)
+                        {
+                            <td class="compare-table__column compare-table__column--product">@x.MehsulKod</td>
+
+                        }
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Çəki</th>
+                        @foreach (var x in Model)
+                        {
+                            <td class="compare-table__column compare-table__column--product">@x.Ceki Kg</td>
+
+                        }
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Rəng</th>
+                        @foreach (var x in Model)
+                        {
+                            <td class="compare-table__column compare-table__column--product">@x.Reng</td>
+
+                        }
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+                    <tr class="compare-table__row">
+                        <th class="compare-table__column compare-table__column--header">Material</th>
+                        @foreach (var x in Model)
+                        {
+                            <td class="compare-table__column compare-table__column--product">@x.Material</td>
+
+                        }
+
+                        <td class="compare-table__column compare-table__column--fake"></td>
+                    </tr>
+                    
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            </div>
+        <div class="block-space block-space--layout--before-footer"></div>
+        </div>
+
+    </div>
+
+    <div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/compare.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:34 GMT -->
+</html>
+

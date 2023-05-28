@@ -1,0 +1,72 @@
+﻿@model List<AlisVeris.Models.Order>
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+
+<body>
+    <!-- site -->
+    <div class="site">
+       
+    
+    <div class="site__body">
+            <div class="block-space block-space--layout--after-header"></div><div class="block">
+                <div class="container container--max--xl">
+                    <div class="row">
+                        @Html.Partial("Menu")
+                        <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Order History</h5>
+                                </div>
+                                <div class="card-divider"></div>
+                                <div class="card-table">
+                                    <div class="table-responsive-sm">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Fatura Kod</th>
+                                                    <th>Tarix</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var x in Model)
+                                                {
+                                                    <tr>
+
+                                                        <td>
+                                                            <a href="@Url.Action("OrderDetay", "Dashboard", new { Id = x.Id })">#@x.FakduraKodu</a>
+                                                        </td>
+                                                        <td>@x.Tarix.ToString("dd-MM-yyyy")</td>
+                                                        <td>@x.Status</td>
+                                                        <td>$2,719.00 for 5 item(s)</td>
+                                                        
+
+                                                    </tr>
+                                                }
+
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-divider"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="block-space block-space--layout--before-footer"></div>
+        </div><!-- site__body / end --><!-- site__footer -->
+    
+    </div><!-- site / end --><!-- mobile-menu -->
+
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+</html>
+

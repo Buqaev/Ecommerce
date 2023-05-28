@@ -1,0 +1,41 @@
+﻿@model List<AlisVeris.Models.Personnel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<a class="btn btn-success" href="@Url.Action("CreatePersonnel","Personnel")">Personnel Yarat</a>
+
+<h2>Personnel Siyahisi</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Veziffe</th>
+                <th>Sekil</th>
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Veziffe</td>
+                    <td><img src="~/Images/@x.Sekil" height="50" /></td>
+
+                    <td><a class="btn btn-danger" href="@Url.Action("Delate","Personnel", new {Id=x.Id })">Sil</a></td>
+
+
+                    <td><a class="btn btn-primary" href="@Url.Action("PersonnelUpdate","Personnel", new {Id=x.Id })">Yenile</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+﻿@model AlisVeris.Models.User
+@{
+    ViewBag.Title = "EditAdres";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-edit-address.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:53 GMT -->
+
+<body>
+    <div class="site">
+
+        <div class="site__body">
+            <div class="block-space block-space--layout--after-header"></div>
+            <div class="block">
+                <div class="container container--max--xl">
+                    <div class="row">
+
+                        @Html.Partial("Menu")
+
+                        <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Edit Address</h5>
+                                </div>
+                                <div class="card-divider"></div>
+                                <div class="card-body card-body--padding--2">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-lg-10 col-xl-8">
+                                            <form method="post" action="@Url.Action("Edit","Dashboard", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+
+                                                <div class="form-group">
+                                                    <label for="address-postcode">Olke</label>
+                                                    <input type="text" class="form-control" name="Olke" value="@Model.Olke" id="address-postcode" placeholder="19720">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address-postcode">Seher</label>
+                                                    <input type="text" class="form-control" name="Seher" value="@Model.Seher" id="address-postcode" placeholder="19720">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address-postcode">Kuce</label>
+                                                    <input type="text" class="form-control" name="Kuce" value="@Model.Kuce" id="address-postcode" placeholder="19720">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address-postcode">Apartman</label>
+                                                    <input type="text" class="form-control" name="Apartman" value="@Model.Apartman" id="address-postcode" placeholder="19720">
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="address-first-name">ZipCode</label>
+                                                        <input type="text" class="form-control" name="ZipCode" value="@Model.ZipCode" id="address-first-name" placeholder="Mark">
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group mb-0">
+                                                    <button class="btn btn-primary mt-3">Saxla</button>
+                                                </div>
+
+                                            </form>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-space block-space--layout--before-footer"></div>
+        </div>
+
+    </div><!-- site / end --><!-- mobile-menu -->
+
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-edit-address.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:53 GMT -->
+</html>
+

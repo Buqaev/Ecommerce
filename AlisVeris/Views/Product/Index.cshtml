@@ -1,0 +1,77 @@
+﻿@model List<AlisVeris.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<br />
+<a class="btn btn-success" href="@Url.Action("CreateProduct","Product")">Mehsul Yarat</a>
+
+<h2>Mehsul Siyahisi</h2>
+
+<div class="row">
+    <div class="col-md-2">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Ad</th>
+                <th>Aciqlama</th>
+                
+                <th>Material</th>
+                <th>EnerjiTipi</th>
+                <th>Voltaj</th>
+                <th>Ceki</th>
+                <th>Eni</th>
+                <th>Uzunluq</th>
+                <th>Tarix</th>
+                <th>AlisQiymet</th>
+                <th>SatisQiymeti</th>
+                <th>StokSayi</th>
+                <th>Rengi</th>
+                <th>Categoryasi</th>
+                <th>MasinMarka</th>
+                <th>MasinModel</th>
+                <th>Duyme</th>
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Acixlama</td>
+                    
+                    <td>@x.Material</td>
+                    <td>@x.EnerjiTipi</td>
+                    <td>@x.Voltaj</td>
+                    <td>@x.Ceki</td>
+                    <td>@x.Eni</td>
+                    <td>@x.Uzunluq</td>
+                    <td>@x.Tarix</td>
+                    <td>@x.AlisQiymeti</td>
+                    <td>@x.SatisQiymeti</td>
+                    <td>@x.StokSayi</td>
+                    
+                    <td>@x.Reng</td>
+                    <td>@x.ProductCategory.Ad</td>
+                    <td>@x.Car.Marka</td>
+                    <td>@x.Car.Model</td>
+                    <td><img src="~/Images/@x.Sekil" height="50" /></td>
+
+                    <td>
+                    <a class="btn btn-danger" href="@Url.Action("Delate","Product", new {Id=x.Id })">Sil</a>
+                    <a class="btn btn-primary" href="@Url.Action("ProductUpdate","Product", new {Id=x.Id })">Yenile</a>
+                    </td>
+
+
+                    
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

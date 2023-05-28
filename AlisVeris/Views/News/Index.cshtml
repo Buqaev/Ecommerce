@@ -1,0 +1,45 @@
+﻿@model List<AlisVeris.Models.News>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<a class="btn btn-success" href="@Url.Action("CreateNews","News")">Xeber Yarat</a>
+
+<h2>Personnel Siyahisi</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Mezmun</th>
+                <th>Basliq</th>
+                <th>Metn</th>
+                <th>Katiqorya</th>
+                <th>Sekil</th>
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Mezmun</td>
+                    <td>@x.Basliq</td>
+                    <td>@x.Metn</td>
+                    <td>@x.NewsCategory.Ad</td>
+                    <td><img src="~/Images/@x.Sekil" height="50" /></td>
+
+                    <td><a class="btn btn-danger" href="@Url.Action("Delate","News", new {Id=x.Id })">Sil</a></td>
+
+
+                    <td><a class="btn btn-primary" href="@Url.Action("NewsUpdate","News", new {Id=x.Id })">Yenile</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

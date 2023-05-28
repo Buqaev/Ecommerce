@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "CreateCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Create","Car")" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Marka</label>
+                    <input type="text" name="Marka" class="form-control" id="exampleInputEmail1" placeholder=" Elave Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Model</label>
+                    <input type="text" name="Model" class="form-control" id="exampleInputEmail1" placeholder=" Elave Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Motor novu</label>
+                    <input type="text" name="MotorNovu" class="form-control" id="exampleInputEmail1" placeholder=" Elave Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Buraxilis ili</label>
+                    <input type="text" name="il" class="form-control" id="exampleInputEmail1" placeholder=" Elave Edin">
+                </div>
+
+
+
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

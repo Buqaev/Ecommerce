@@ -1,0 +1,35 @@
+﻿@model List<AlisVeris.Models.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Elaqelerimiz</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Isdifadeci Adi</td>
+            <td>Basliq</td>
+            <td>Metn</td>
+            <td>Duyme</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.User.Ad</td>
+            <td>@x.Basliq</td>
+            <td>@x.Metn</td>
+
+
+            <td>
+                <a class="btn btn-danger" href="@Url.Action("Delete", "Contact", new { Id = x.Id })">Sil</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,97 @@
+﻿@model List<AlisVeris.Models.Checkout>
+@{
+    ViewBag.Title = "OrderDetay";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-order-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+
+<body>
+    <!-- site -->
+    <div class="site">
+ 
+    <div class="site__body">
+        <div class="block-space block-space--layout--after-header"></div>
+        <div class="block">
+        <div class="container container--max--xl">
+            <div class="row">
+                @Html.Partial("Menu")
+
+                <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                    <div class="card">
+                        <div class="order-header">
+                            <div class="order-header__actions">
+                                <a href="account-orders.html" class="btn btn-xs btn-secondary">Back to list</a>
+                            </div>
+                            <h5 class="order-header__title">Order #9478</h5>
+                            <div class="order-header__subtitle">
+                                Was placed on <mark>Oct 19, 2020</mark> and is currently
+                                <mark>Pending</mark>.
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
+                        <div class="card-table">
+                            <div class="table-responsive-sm">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Mehsul</th>
+                                            <th>Sekil</th>
+                                            <th>Say</th>
+                                            <th>Mebleg</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="card-table__body card-table__body--merge-rows">
+
+                                        @foreach (var x in Model)
+                                        {
+                                            <tr>
+                                                <td>@x.ShoppingCart.Product.Ad</td>
+                                                <td>
+                                                    <img style="width:50px; height:50px;" src="~/Images/@x.ShoppingCart.Product.Sekil" />
+                                                </td>
+                                                <td>@x.ShoppingCart.Say</td>
+                                                <td>$@x.ShoppingCart.UmumiMebleg</td>
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                    <tbody class="card-table__body card-table__body--merge-rows">
+                                        <tr>
+                                            <th>Mehsul Sayi</th>
+                                            <td> @ViewBag.mehsulSayi</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cesid Sayi</th>
+                                            <td>@ViewBag.cesidSayi</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Umumi odenilen mebleg</th>
+                                            <td>$@ViewBag.umumimebleg</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+            </div>
+        <div class="block-space block-space--layout--before-footer"></div>
+        </div><!-- site__body / end --><!-- site__footer -->
+    
+    </div><!-- site / end --><!-- mobile-menu -->
+    
+
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-order-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+</html>
+

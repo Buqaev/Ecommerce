@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+
+
+
+
+<h2>Yarat</h2>
+<form method="post" action="@Url.Action("Createsekil","Dashboard")" enctype="multipart/form-data" role="form">
+    <div class="card-body">
+       
+
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Sekil</label>
+            <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+        </div>
+
+
+
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Yarat</button>
+    </div>
+</form>

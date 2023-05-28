@@ -1,0 +1,42 @@
+﻿@model List<AlisVeris.Models.NewsCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<a class="btn btn-success" href="@Url.Action("CreateCategory","NewsCategorie")">XeberKatiqoriasi Yarat</a>
+
+<h2>Personnel Siyahisi</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Ad</th>
+              
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+
+
+                    <td>
+                    <a class="btn btn-danger" href="@Url.Action("Delate","NewsCategorie", new {Id=x.Id })">Sil</a>
+                    <a class="btn btn-primary" href="@Url.Action("CategoryUpdate","NewsCategorie", new {Id=x.Id })">Yenile</a>
+                    </td>
+
+
+                    
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,67 @@
+﻿@model AlisVeris.Models.User
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+
+<body>
+    <!-- site -->
+    <div class="site">
+
+    <div class="site__body">
+        <div class="block-space block-space--layout--after-header"></div>
+        <div class="block">
+        <div class="container container--max--xl">
+            <div class="row">
+                @Html.Partial("Menu")
+
+                <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                <div class="card">
+                    <div class="card-header"><h5>Edit Profile</h5></div>
+                    <div class="card-divider"></div>
+                    <div class="card-body card-body--padding--2">
+                        <div class="row no-gutters">
+                            <form method="post" action="@Url.Action("Update","Dashboard", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+
+                                <div class="col-12 col-lg-7 col-xl-6">
+                                    <div class="form-group">
+                                        <label for="profile-first-name">Ad</label>
+                                        <input type="text" class="form-control" name="Ad" value="@Model.Ad" id="profile-first-name" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-last-name">Soyad</label>
+                                        <input type="text" class="form-control" name="Soyad" value="@Model.Soyad" id="profile-last-name" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-email">Email Address</label>
+                                        <input type="email" class="form-control" name="Email" value="@Model.Email" id="profile-email" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-phone">Telefon Number</label>
+                                        <input type="text" class="form-control" name="Telefon" value="@Model.Telefon" id="profile-phone" placeholder="Phone Number">
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <button class="btn btn-primary mt-3">Save</button>
+                                    </div>
+                                </div>
+                                </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        <div class="block-space block-space--layout--before-footer"></div>
+        </div>
+
+    </div>
+ 
+ 
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/account-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+</html>

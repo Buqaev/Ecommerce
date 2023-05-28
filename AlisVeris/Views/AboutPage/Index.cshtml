@@ -1,0 +1,165 @@
+﻿@model AlisVeris.Models.AboutDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:12:36 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>About Us — Red Parts</title>
+    <link rel="icon" type="image/png" href="images/favicon.png"><!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"><!-- css -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.header-spaceship-variant-one.css" media="(min-width: 1200px)">
+    <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)"><!-- font - fontawesome -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-8"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-97489509-8");</script>
+</head>
+<body>
+<div class="site">
+
+    <div class="site__body">
+    <div class="about">
+        <div class="about__body">
+        <div class="about__image">
+            <div class="about__image-bg" style="background-image: url('/orange-ltr/images/about-1903x1903.jpg');"></div>
+            <div class="decor about__image-decor decor--type--bottom">
+            <div class="decor__body">
+                <div class="decor__start"></div>
+                <div class="decor__end"></div>
+                <div class="decor__center">
+                    </div>
+                </div>
+                </div>
+            </div>
+        <div class="about__card">
+            @foreach (var x in Model.Abouts)
+            {
+                <div class="about__card-title">Haqimizda</div>
+                <div class="about__card-text">@x.Metn</div>
+                <div class="about__card-author">@x.Basliq /@x.Veziffe</div>
+                <div class="about__card-signature">
+                    <img src="~/orange-ltr/images/signature.jpg" width="160" height="55" alt="">
+                </div>
+            }
+
+        </div>
+        <div class="about__indicators">
+            <div class="about__indicators-body">
+            <div class="about__indicators-item">
+                <div class="about__indicators-item-value">350</div>
+                <div class="about__indicators-item-title">Stores around the world</div>
+                </div><div class="about__indicators-item">
+                <div class="about__indicators-item-value">@ViewBag.mehsulsay</div>
+                <div class="about__indicators-item-title">Ehtiyyat hissələri</div>
+                    </div><div class="about__indicators-item">
+                              <div class="about__indicators-item-value">@ViewBag.isdifadecisay</div>
+                <div class="about__indicators-item-title">Akdiv müştərilər</div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="block-space block-space--layout--divider-xl"></div>
+    <div class="block block-teammates">
+        <div class="container container--max--xl">
+            <div class="block-teammates__title">Peşəkar Komanda</div>
+            <div class="block-teammates__subtitle">Tanış olun bu bizim peşəkar komandamızdır.</div>
+        <div class="block-teammates__list">
+            <div class="owl-carousel">
+                @foreach (var x in Model.Personnels)
+                {
+                    <div class="block-teammates__item teammate">
+
+                        <div class="teammate__avatar">
+                            <img src="~/Images/@x.Sekil" alt="">
+                        </div>
+                        <div class="teammate__info">
+                            <div class="teammate__name">@x.Ad</div>
+                            <div class="teammate__position">@x.Veziffe</div>
+                        </div>
+                        
+
+                    </div>
+                }
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="block-space block-space--layout--divider-xl"></div>
+    <div class="block block-reviews">
+        <div class="container">
+            <div class="block-reviews__title">Rəylər</div>
+            <div class="block-reviews__subtitle">İşimiz zamanı<br>yüzlərlə müsbət rəy topladıq.</div>
+        <div class="block-reviews__list">
+            <div class="owl-carousel">
+
+                @foreach (var x in Model.Contacts)
+                {
+                    <div class="block-reviews__item">
+                        <div class="block-reviews__item-avatar">
+                            <img src="~/Images/@x.User.Sekil" alt="">
+                        </div>
+                        <div class="block-reviews__item-content">
+                            <div class="block-reviews__item-text">@x.Metn</div>
+                            <div class="block-reviews__item-meta">
+                                <div class="block-reviews__item-rating">
+                                    <div class="rating">
+                                        <div class="rating__body">
+                                            <div class="rating__star rating__star--active"></div>
+                                            <div class="rating__star rating__star--active"></div>
+                                            <div class="rating__star rating__star--active"></div>
+                                            <div class="rating__star rating__star--active"></div>
+                                            <div class="rating__star">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-reviews__item-author">@x.User.Ad @x.User.Soyad</div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+
+            </div>
+        </div>
+
+
+
+            </div></div>
+    <div class="block-space block-space--layout--before-footer"></div>
+        </div><!-- site__body / end --><!-- site__footer -->
+    </div>
+
+
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/photoswipe/photoswipe.min.js"></script>
+    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="vendor/select2/js/select2.min.js"></script>
+    <script src="js/number.js"></script>
+    <script src="js/main.js"></script>
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:12:48 GMT -->
+</html>
+

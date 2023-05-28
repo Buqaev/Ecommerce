@@ -1,0 +1,342 @@
+﻿@model AlisVeris.Models.BlogDetailDto
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/post-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+
+<body>
+<div class="site">
+
+    <div class="site__body">
+            <div class="block post-view">
+                <div class="post-view__header post-header post-header--has-image">
+                <div class="post-header__image" style="background-image: url('/orange-ltr/images/posts/post-1-1903x500.jpg');">
+                    </div>
+                <div class="post-header__body">
+                    <div class="post-header__categories">
+                    <ul class="post-header__categories-list">
+                        <li class="post-header__categories-item">
+                        <a href="#" class="post-header__categories-link">Latest News</a>
+                            </li>
+                        </ul>
+                        </div>
+                    <h1 class="post-header__title">Morbi Interdum Velit Quis Magna Placerat Lobortis Eget</h1>
+                    <div class="post-header__meta">
+                    <ul class="post-header__meta-list">
+                        <li class="post-header__meta-item">By <a href="#" class="post-header__meta-link">Jessica Moore</a></li>
+                        <li class="post-header__meta-item">November 30, 2018</li>
+                        <li class="post-header__meta-item">
+                        <a href="#" class="post-header__meta-link">4 Comments</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                <div class="decor post-header__decor decor--type--bottom">
+                    <div class="decor__body">
+                    <div class="decor__start"></div>
+                    <div class="decor__end"></div>
+                    <div class="decor__center"></div>
+                        </div>
+                    </div>
+                    </div>
+        <div class="container">
+                    <div class="post-view__body" >
+                        <div class="blog-view__item blog-view__item-sidebar" style="margin-right:50px !important;">
+                            <div class="card widget widget-search">
+                                <form method="post" action="@Url.Action("Index", "BlogPage")">
+                                    <input class="widget-search__input" name="p" type="search" placeholder="Blog search..."> <button class="widget-search__button">
+                                        <svg width="20" height="20">
+                                            <path d="M19.2,17.8c0,0-0.2,0.5-0.5,0.8c-0.4,0.4-0.9,0.6-0.9,0.6s-0.9,0.7-2.8-1.6c-1.1-1.4-2.2-2.8-3.1-3.9C10.9,14.5,9.5,15,8,15
+	c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7c0,1.5-0.5,2.9-1.3,4c1.1,0.8,2.5,2,4,3.1C20,16.8,19.2,17.8,19.2,17.8z M8,3C5.2,3,3,5.2,3,8
+	c0,2.8,2.2,5,5,5c2.8,0,5-2.2,5-5C13,5.2,10.8,3,8,3z" />
+                                        </svg>
+                                    </button><div class="widget-search__field"></div>
+                                </form>
+                            </div>
+                            <div class="card widget widget-about-us">
+                            <div class="widget__header"><h4>About Blog</h4>
+                                </div><div class="widget-about-us__body">
+                                <div class="widget-about-us__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, erat in malesuada aliquam, est erat faucibus purus, eget viverra nulla sem vitae neque. Quisque id sodales libero.</div>
+                                <div class="widget-about-us__social-links social-links">
+                                <ul class="social-links__list">
+                                    <li class="social-links__item social-links__item--rss">
+                                    <a href="https://themeforest.net/user/kos9" target="_blank">
+                                        <i class="widget-social__icon fas fa-rss"></i>
+                                        </a>
+                                        </li>
+                                    <li class="social-links__item social-links__item--youtube">
+                                    <a href="https://themeforest.net/user/kos9" target="_blank">
+                                        <i class="widget-social__icon fab fa-youtube"></i>
+                                        </a>
+                                        </li>
+                                    <li class="social-links__item social-links__item--facebook">
+                                    <a href="https://themeforest.net/user/kos9" target="_blank">
+                                        <i class="widget-social__icon fab fa-facebook-f"></i>
+                                        </a>
+                                        </li>
+                                    <li class="social-links__item social-links__item--twitter">
+                                    <a href="https://themeforest.net/user/kos9" target="_blank">
+                                        <i class="widget-social__icon fab fa-twitter"></i>
+                                        </a>
+                                        </li>
+                                    <li class="social-links__item social-links__item--instagram">
+                                    <a href="https://themeforest.net/user/kos9" target="_blank">
+                                        <i class="widget-social__icon fab fa-instagram"></i>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            <div class="card widget widget-categories">
+                            <div class="widget__header">
+                                <h4>Categories</h4>
+                                </div>
+                            <ul class="widget-categories__list widget-categories__list--root" data-collapse data-collapse-opened-class="widget-categories__item--open">
+                                @foreach (var x in Model.NewsCategories)
+                                {
+                                    <li class="widget-categories__item" data-collapse-item>
+                                        <a href="@Url.Action("Index","BlogPage", new {CatId = x.Id })" class="widget-categories__link">@x.Ad</a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                                </div>
+                            <div class="card widget widget-posts">
+                            <div class="widget__header">
+                                <h4>Latest Posts</h4>
+                                </div>
+                            <ul class="widget-posts__list">
+
+                                @foreach (var x in Model.News3)
+                                {
+                                    <li class="widget-posts__item">
+                                        <div class="widget-posts__image">
+                                            <a href="@Url.Action("BlogDetail","BlogPage",new { Id=x.Id})">
+                                                <img  height="70px;" width="90px;" src="~/Images/@x.Sekil" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="widget-posts__info">
+                                            <div class="widget-posts__name">
+                                                <a href="#">@x.Mezmun</a>
+                                            </div>
+                                            <div class="widget-posts__date">October 19, 2019</div>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                                </div>
+                            
+                            <div class="card widget widget-comments">
+                            <div class="widget__header">
+                                <h4>Son Commentler</h4>
+                                </div>
+                            <div class="widget-comments__body">
+                                <ul class="widget-comments__list">
+                                    @foreach (var x in Model.blogComments)
+                                    {
+                                        <li class="widget-comments__item">
+                                            <div class="widget-comments__author">
+                                                <a href="#">@x.User.Ad</a>
+                                            </div>
+                                            <div class="widget-comments__content">@x.Metn...</div>
+                                            <div class="widget-comments__meta">
+                                                <div class="widget-comments__date">@x.Tarix.ToString("dd-mm-yyyy")</div>
+                                               
+                                            </div>
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </div>
+                                </div>
+                            <div class="card widget-tags widget">
+                            <div class="widget__header">
+                                <h4>Teqler</h4>
+                                </div>
+                            <div class="widget-tags__body tags">
+                                <div class="tags__list">
+                                    @foreach (var x in Model.Tegs)
+                                    {
+                                        <a href="@Url.Action("Index","BlogPage", new {TagId = x.Id })">@x.Ad</a>
+                                    }
+
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="post-view__item post-view__item-post">
+                            <div class="post-view__card post">
+                                
+                                    <div class="post__body typography">
+                                        <p>@Model.New.Mezmun</p>
+                                        <p></p><h2>@Model.New.Basliq</h2>
+                                        <p>@Model.New.Metn</p>
+                                       
+                                        <figure>
+                                            <a href="#">
+                                                <img src="~/Images/@Model.New.Sekil" alt="">
+                                            </a>
+                                            
+                                        </figure>
+                                        
+                                    </div>
+                                
+                                @*<div class="post__pagination">
+        <div class="post__pagination-title">Pages</div>
+        <div class="post__pagination-list">
+        <ul>
+            <li>
+            <span class="post__pagination-link post__pagination-link--current">1</span>
+                </li>
+            <li>
+            <a href="#" class="post__pagination-link">2</a>
+                </li>
+            <li>
+            <a href="#" class="post__pagination-link">3</a>
+                </li>
+            </ul>
+            </div>
+        </div>*@
+                                <div class="post__footer">
+                                    <div class="post__tags tags tags--sm">
+
+                                       
+                                        <div class="tags__list">
+                                            @foreach (var x in Model.Tegs2)
+                                            {
+                                                <a href="#">@x.Ad</a>
+                                            }
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="post__share-links share-links">
+                                        <ul class="share-links__list">
+                                            <li class="share-links__item share-links__item--type--like">
+                                                <a href="#">Like</a>
+                                            </li>
+                                            <li class="share-links__item share-links__item--type--tweet">
+                                                <a href="#">Tweet</a>
+                                            </li>
+                                            <li class="share-links__item share-links__item--type--pin">
+                                                <a href="#">Pin It</a>
+                                            </li>
+                                            <li class="share-links__item share-links__item--type--counter">
+                                                <a href="#">4K</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post__author">
+                                    <div class="post__author-avatar">
+                                        <img src="images/avatars/avatar-4-70x70.jpg" alt="">
+                                    </div>
+                                    <div class="post__author-info">
+                                        <div class="post__author-name">Ryan Ford</div>
+                                        <div class="post__author-about">Aliquam ullamcorper elementum sagittis. Etiam lacus lacus, mollis in mattis in, vehicula eu nulla. Nulla nec tellus pellentesque.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-view__card post-navigation">
+                                <div class="post-navigation__body">
+                                    @*<a class="post-navigation__item post-navigation__item--prev" href="#">
+                                    <div class="post-navigation__item-image">
+                                        <img src="images/posts/post-2-80x80.jpg" alt="">
+                                        </div>
+                                    <div class="post-navigation__item-info">
+                                        <div class="post-navigation__direction">
+                                        <div class="post-navigation__direction-arrow">
+                                            <svg width="7" height="11">
+                                            <path d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z" />
+                                                </svg>
+                                            </div>
+                                        <div class="post-navigation__direction-title">Previous post</div>
+                                            </div>
+                                        <div class="post-navigation__item-title">Logic Is The Study Of Reasoning And Argument Part 2</div>
+                                        </div>
+                                        </a>
+                                    <a class="post-navigation__item post-navigation__item--next" href="#">
+                                        <div class="post-navigation__item-info">
+                                            <div class="post-navigation__direction">
+                                                <div class="post-navigation__direction-title">Next post</div>
+                                            <div class="post-navigation__direction-arrow">
+                                                    <svg width="7" height="11">
+                                                        <path d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9
+	C-0.1,9.8-0.1,10.4,0.3,10.7z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        <div class="post-navigation__item-title">Some Philosophers Specialize In One Or More Historical Periods</div>
+                                        </div>
+                                        <div class="post-navigation__item-image"><img src="images/posts/post-3-80x80.jpg" alt=""></div>
+                                    </a>*@
+                                </div>
+                            </div>
+                            <div class="post-view__card">
+                                <h2 class="post-view__card-title">Comments (4)</h2>
+                            <div class="post-view__card-body comments-view">
+                                <ol class="comments-list comments-list--level--0 comments-view__list">
+                                    @foreach (var x in Model.BlogComments)
+                                    {
+                                        <li class="comments-list__item">
+                                            <div class="comment">
+                                                <div class="comment__body">
+                                                    <div class="comment__avatar">
+                                                    <img style="width:50px; height:60px; " src="~/Images/@x.User.Sekil" alt="">
+                                                        </div>
+                                                    <div class="comment__meta">
+                                                    <div class="comment__author">@x.User.Ad</div>
+                                                    <div class="comment__date">@x.Tarix.ToString("dd-MM-yyyy")</div>
+                                                        </div>
+                                                    
+                                                    <div class="comment__content typography">@x.Metn</div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+
+                                </ol>
+                               
+                                </div>
+                            </div>
+                            <div class="post-view__card">
+                                <h2 class="post-view__card-title">Write A Comment</h2>
+                                <form method="post" action="@Url.Action("BlogComment","BlogPage",new {Id=Model.New.Id })" class="form-group" id="contactform">
+
+                                   
+                                    <div class="form-group">
+                                        <label for="comment-content">Rey</label>
+                                        <textarea class="form-control" name="Metn" id="comment-content" rows="6"></textarea>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <button type="submit" class="btn btn-primary mt-md-4 mt-2">Rey Yaz</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="block-space block-space--layout--before-footer"></div>
+        </div><!-- site__body / end --><!-- site__footer -->
+   
+    </div>
+
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/post-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:52 GMT -->
+</html>
+

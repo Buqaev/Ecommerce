@@ -1,0 +1,226 @@
+﻿@model AlisVeris.Models.Checkout
+@{
+    ViewBag.Title = "CixarisEt";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:32 GMT -->
+
+<body>
+    <!-- site -->
+    <div class="site">
+
+    <div class="site__body">
+        <div class="block-header block-header--has-breadcrumb block-header--has-title">
+        <div class="container">
+            <div class="block-header__body">
+            <nav class="breadcrumb block-header__breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb__list">
+                <li class="breadcrumb__spaceship-safe-area" role="presentation"></li>
+                <li class="breadcrumb__item breadcrumb__item--parent breadcrumb__item--first">
+                    <a href="index.html" class="breadcrumb__item-link">Home</a>
+                    </li>
+                <li class="breadcrumb__item breadcrumb__item--parent">
+                    <a href="#" class="breadcrumb__item-link">Breadcrumb</a>
+                    </li>
+                <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
+                    <span class="breadcrumb__item-link">Current Page</span>
+                    </li>
+                <li class="breadcrumb__title-safe-area" role="presentation"></li>
+                    </ol>
+                </nav>
+            <h1 class="block-header__title">Checkout</h1>
+                </div>
+            </div>
+            </div>
+        <div class="checkout block">
+        <div class="container container--max--xl">
+            <div class="row">
+
+
+                <form method="post" action="@Url.Action("Cixaris","ProductPage",new {Id=Model.Id })" enctype="multipart/form-data" role="form">
+
+
+                    <div class="col-12 mb-3">
+                        <div class="alert alert-lg alert-primary">
+                            Returning customer? <a href="#">Click here to login</a>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="col-12 col-lg-6 col-xl-7">
+                            <div class="card mb-lg-0">
+                                <div class="card-body card-body--padding--2">
+                                    <h3 class="card-title">Billing details</h3>
+                                    <div class="form-group">
+                                        <label for="checkout-company-name">
+                                            Seher <span class="text-muted">(Optional)</span>
+                                        </label>
+                                        <input type="text" class="form-control" name="CatdirilmaSeheri" id="checkout-company-name" placeholder="Company Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkout-company-name">
+                                            Adres <span class="text-muted">(Optional)</span>
+                                        </label>
+                                        <input type="text" class="form-control" name="CatdirilmaAdres" id="checkout-company-name" placeholder="Company Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkout-company-name">
+                                            Olek <span class="text-muted">(Optional)</span>
+                                        </label>
+                                        <input type="text" class="form-control" name="CatdirilmaSeher" id="checkout-company-name" placeholder="Company Name">
+                                    </div>
+
+                                </div>
+                                <div class="card-divider"></div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                            <div class="card mb-0">
+                                <div class="card-body card-body--padding--2">
+                                    <h3 class="card-title">Your Order</h3>
+                                    <table class="checkout__totals">
+                                        <thead class="checkout__totals-header">
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class="checkout__totals-products">
+                                            <tr>
+                                                <td>Glossy Gray 19" Aluminium Wheel AR-19 × 2</td>
+                                                <td>$1398.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brandix Brake Kit BDX-750Z370-S × 1</td>
+                                                <td>$849.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Twin Exhaust Pipe From Brandix Z54 × 3</td>
+                                                <td>$3630.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody class="checkout__totals-subtotals">
+                                            <tr>
+                                                <th>Subtotal</th>
+                                                <td>$5877.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Store Credit</th>
+                                                <td>$-20.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Shipping</th>
+                                                <td>$25.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="checkout__totals-footer">
+                                            <tr>
+                                                <th>Total</th>
+                                                <td>$5882.00</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="checkout__payment-methods payment-methods">
+                                        <ul class="payment-methods__list">
+                                            <li class="payment-methods__item payment-methods__item--active">
+                                                <label class="payment-methods__item-header">
+                                                    <span class="payment-methods__item-radio input-radio">
+                                                        <span class="input-radio__body">
+                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked">
+                                                            <span class="input-radio__circle"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="payment-methods__item-title">Direct bank transfer</span>
+                                                </label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-details text-muted">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item">
+                                                <label class="payment-methods__item-header">
+                                                    <span class="payment-methods__item-radio input-radio">
+                                                        <span class="input-radio__body">
+                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <span class="input-radio__circle"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="payment-methods__item-title">Check payments</span>
+                                                </label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-details text-muted">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item">
+                                                <label class="payment-methods__item-header">
+                                                    <span class="payment-methods__item-radio input-radio">
+                                                        <span class="input-radio__body">
+                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <span class="input-radio__circle"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="payment-methods__item-title">Cash on delivery</span>
+                                                </label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-details text-muted">Pay with cash upon delivery.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item">
+                                                <label class="payment-methods__item-header">
+                                                    <span class="payment-methods__item-radio input-radio">
+                                                        <span class="input-radio__body">
+                                                            <input class="input-radio__input" name="checkout_payment_method" type="radio">
+                                                            <span class="input-radio__circle"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="payment-methods__item-title">PayPal</span>
+                                                </label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-details text-muted">Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="checkout__agree form-group">
+                                        <div class="form-check">
+                                            <span class="input-check form-check-input">
+                                                <span class="input-check__body">
+                                                    <input class="input-check__input" type="checkbox" id="checkout-terms">
+                                                    <span class="input-check__box"></span>
+                                                    <span class="input-check__icon">
+                                                        <svg width="9px" height="7px">
+                                                            <path d="M9,1.395L3.46,7L0,3.5L1.383,2.095L3.46,4.2L7.617,0L9,1.395Z" />
+
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <label class="form-check-label" for="checkout-terms">
+                                                I have read and agree to the website
+                                                <a target="_blank" href="terms.html">terms and conditions</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-xl btn-block">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </form>
+            </div>
+            </div>
+            </div>
+        <div class="block-space block-space--layout--before-footer"></div>
+        </div>
+
+    </div><!-- site / end --><!-- mobile-menu -->
+  
+</body>
+<!-- Mirrored from red-parts.html.themeforest.scompiler.ru/themes/orange-ltr/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Aug 2022 20:13:32 GMT -->
+</html>
+

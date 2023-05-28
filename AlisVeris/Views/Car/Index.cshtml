@@ -1,0 +1,51 @@
+﻿@model List<AlisVeris.Models.Car>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<a class="btn btn-success" href="@Url.Action("CreateCar","Car")">Masin Yarat</a>
+
+<h2>Personnel Siyahisi</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>MotorNovu</th>
+                <th>Buraxilis ili</th>
+                
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Marka</td>
+                    <td>@x.Model</td>
+                    <td>@x.MotorNovu</td>
+                    <td>@x.il</td>
+                    
+
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delate","Car", new {Id=x.Id })">Sil</a>
+                        <a class="btn btn-primary" href="@Url.Action("CarUpdate","Car", new {Id=x.Id })">Yenile</a>
+                    </td>
+
+
+                    
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
+
+

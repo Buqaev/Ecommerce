@@ -1,0 +1,37 @@
+﻿@model List<AlisVeris.Models.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin Melumati</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Ad</td>
+            <td>Soyad</td>
+            <td>Nomre</td>
+            <td>Email</td>
+            <td>Sifre</td>
+            <td>Duyme</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+
+                <td>@x.Ad</td>
+                <td>@x.Soyad</td>
+                <td>@x.Nomre</td>
+                <td>@x.Email</td>
+                <td>@x.Sifre</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("UpdateAdmin", "Admin", new { Id = x.Id })">Yenile</a>
+                </td>
+                
+            </tr>
+        }
+        </tbody>
+</table>
